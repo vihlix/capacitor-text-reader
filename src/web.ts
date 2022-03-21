@@ -1,10 +1,13 @@
 import { WebPlugin } from '@capacitor/core';
 
-import type { TextReaderPlugin } from './definitions';
+import type { ImageOrientation, TextDetection, TextReaderPlugin } from './definitions';
 
 export class TextReaderWeb extends WebPlugin implements TextReaderPlugin {
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
+  detectText(options: { filename: string; orientation?: ImageOrientation | undefined; }): Promise<{ textDetections: TextDetection[] }> {
+    console.log("Filepath", options.filename);
+    console.log("Orientation", options.orientation);
+    throw new Error('Method not implemented.');
   }
+
+
 }

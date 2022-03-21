@@ -13,25 +13,50 @@ npx cap sync
 
 <docgen-index>
 
-* [`echo(...)`](#echo)
+* [`detectText(...)`](#detecttext)
+* [Interfaces](#interfaces)
+* [Enums](#enums)
 
 </docgen-index>
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### echo(...)
+### detectText(...)
 
 ```typescript
-echo(options: { value: string; }) => Promise<{ value: string; }>
+detectText(options: { filename: string; orientation?: ImageOrientation; }) => Promise<{ textDetections: TextDetection[]; }>
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
+| Param         | Type                                                                                               |
+| ------------- | -------------------------------------------------------------------------------------------------- |
+| **`options`** | <code>{ filename: string; orientation?: <a href="#imageorientation">ImageOrientation</a>; }</code> |
 
-**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+**Returns:** <code>Promise&lt;{ textDetections: TextDetection[]; }&gt;</code>
 
 --------------------
+
+
+### Interfaces
+
+
+#### TextDetection
+
+| Prop       | Type                |
+| ---------- | ------------------- |
+| **`text`** | <code>string</code> |
+
+
+### Enums
+
+
+#### ImageOrientation
+
+| Members     | Value                |
+| ----------- | -------------------- |
+| **`Up`**    | <code>"UP"</code>    |
+| **`Down`**  | <code>"DOWN"</code>  |
+| **`Left`**  | <code>"LEFT"</code>  |
+| **`Right`** | <code>"RIGHT"</code> |
 
 </docgen-api>
