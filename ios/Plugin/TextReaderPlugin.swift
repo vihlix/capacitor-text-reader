@@ -10,7 +10,7 @@ import Capacitor
 public class TextReaderPlugin: CAPPlugin {
     
     @objc func detectText(_ call: CAPPluginCall){
-        guard var filepath = call.getString("filepath") else{
+        guard var filepath = call.getString("filename") else{
             call.reject("file not found")
             return
         }
@@ -22,7 +22,6 @@ public class TextReaderPlugin: CAPPlugin {
             return
         }
         
-        TextReader(call: call, image: image)
-        call.resolve(["value":filepath])
+        TextReader(call: call, image: image).detectText()
     }
 }
