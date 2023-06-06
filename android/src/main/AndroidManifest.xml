@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.vlx.plugins.text.reader">
+    >
     <meta-data
         android:name="com.google.firebase.ml.vision.DEPENDENCIES"
         android:value="ocr" />
